@@ -1,0 +1,59 @@
+<?php
+	$figuras = array('Corazon Rojo','Corazon Negro','Diamante','Trebol');
+	$valores = array('A','2','3','4','5','6','7','8','9','10','J','Q','K');
+	//$naipes = [][];
+	//foreach ($figuras as $val =>  $figura) {
+		//foreach ($valores as $value  => $valor ) {
+		//	$naipes[$val][$value] = $figura.'-'.$valor;
+		//}
+	//}
+	$naipes = [];
+	$contador = 0;
+	foreach ($figuras as  $figura) {
+		foreach ($valores as $valor) {
+			$naipes[$contador] = $figura.' - ' .$valor;
+			$contador += 1;
+		}
+	}
+	//shuffle($naipes);
+
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Naipes</title>
+</head>
+<body>
+	<div>
+		<div>
+			<h3>Naipes</h3>
+			<?php
+		foreach ($naipes as $naipe) {
+			echo $naipe.'<br>';
+		}
+
+		?>
+		</div>
+		<div>
+			<h3>Barajeamos</h3>
+			<?php
+			shuffle($naipes);
+		foreach ($naipes as $naipe) {
+			echo $naipe.'<br>';
+		}
+
+		?>
+		</div>
+		<div>
+			<h3>5 Primera Carta</h3>
+			<?php
+					for ($i=0; $i <5 ; $i++) { 
+						echo $naipes[$i].'<br>';
+					}
+			?>
+		</div>
+	</div>
+		
+</body>
+</html>
